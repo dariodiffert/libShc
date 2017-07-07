@@ -1,0 +1,65 @@
+
+/** \page translations Translations (Warping)
+ *
+ *  Translations can be simulated in the basis of spherical harmonics by changing the center of the spherical harmonics.
+ *  This is done by approximating the translation in spatial space and transforming the result into the basis of spherical harmonics,
+ *  where it can be written as a matrix multiplication.
+ *  This process is computational expensive and is therefore precalculated only for Z-axis translations during the initialization phase (see shc::Shc::init).
+ *  Arbitrary translations can then be calculated by concatenating rotations and Z-axis translations using shc::Shc::warp.
+ *  We refer to translations in arbitrary directions as ''warp'' or ''warping''.
+ *
+ *  Note that this approach does not work with \ref hemisphericalcontinuations.
+ *  In this case, the required translation matrices have to be computed individually via shc::Shc::create_matrix_warp.
+ *
+ * \image html translation.png
+ *
+ *  This figure shows the translation for different distance values \f$ 0 \le t \le 1.5 \f$ along the X-axis (assuming that the image represents a sphere with radius \f$ r=1 \f$).
+ *  As it can be seen, the translation stretches the image at the <i>point of expansion</i> (white square) and contracts at the <i>point of contraction</i> (gray square).
+ *
+ *  ---
+ *
+ *  <b>Interpretations:</b>
+ *
+ *  Translations can be interpreted differently.
+ *  In this example we interpret the panoramic image as a density distribution (of points, particles, or similar).
+ *  This can be noticed by observing the following effects:
+ *
+ *  - The area around the point of expansion gets darker for larger translations: A smaller number of points can be observed in this direction.
+ *  - The area around the point of contraction gets lighter for larger translations: A larger number of points can be observed in this direction.
+ *  - Moving outside the sphere (\f$ t > 1 \f$) superimposes the distribution of the complete sphere: All particles are behind the observer.
+ *
+ *  We call this kind of translation <i>DENSITY</i>.
+ *  In contrast, a purely <i>VISUAL</i> interpretation is basically similar but does not show the special effects mentioned above.
+ *  Both interpretations can be used by setting the corresponding parameter during the initialization via shc::Shc::init_translations. 
+ *
+ *  ---
+ *
+ *  <b>Pointclouds:</b>
+ *
+ *  The <i>DENSITY</i> interpretation can be used for example to align \ref pointclouds (e.g. 3D model data).
+ *  The libShc provides the functionality to load and manipulate \ref pointclouds.
+ *
+ *  ---
+ *
+ *  <b>Slices</b>:
+ *
+ *  In the standard case a single sphere (in the following called slice) is used to represent a function \f$ f \f$ defined on the unit sphere.
+ *  However, by projecting three-dimensional data on the sphere valuable data can be lost.
+ *  Instead of projecting \f$ f \f$ onto a single slice with radius \f$ r = 1 \f$ we can project \f$ f \f$ onto multiple slices with differing radii.
+ *
+ *  The number of slices \f$ n \f$ can be set in the initialization phase via shc::Shc::init_slices.
+ *  Note that the input function for translations as well as the result of translations will be a vector with \f$ n \f$ slices stored in a vector of shc::Shpm instances.
+ *
+ *  ---
+ *
+ *  <b>Problem Cases:</b>
+ *
+ *  Translations (especially with multiple slices) are an experimental feature, therefore note the following points:
+ *
+ *  - Translations are precalculated for the values set by shc::Shc::init_translations during the initialization phase. Since they are approximated in spatial space, the quality is determind by the number of sampling points set by shc::Shc::init_surface
+ *  - Translations contract the function \f$ f \f$ around the point of contractions, which increases the number of necessary bands \f$ L \f$ to express the translated function.
+ *  - Translations using multiple slices seems reasonable for the <i>DENSITY</i> interpretation only.
+ *  - By using \f$ n \f$ slices, each translation is not only expressed by <i>one</i> but \f$ n \f$ transformation matrices. The calculation time increases by the factor \f$ n^2 \f$.
+ */
+ 
+ 

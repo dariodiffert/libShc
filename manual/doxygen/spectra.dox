@@ -1,0 +1,16 @@
+
+/** \page spectra Spectra
+ *
+ *  The amplitude spectrum and bispectrum can be calculated directly from any shc::Shpm instance of Fourier transformed data via shc::Shc::get_feature
+ * (note the \ref storingorders for both spectra).
+ * Both spectra are rotational-invariant and can be used as a distance measure between two functions by shc::Shc::get_feature_difference.
+ *
+ *  Note that the <i>amplitude spectrum</i> does <b>only</b> contain the amplitude information of a given function.
+ *  The <i>bispectrum</i> contains both <b>amplitude</b> and <b>phase</b> information.
+ *
+ *  Since Clebsch-Gordan coefficients (see \ref products) are needed in order to calculate the bispectrum,
+ *  the number of bands for which the Clebsch-Gordan coefficients are calculated have to be initalized first via shc::Shc::init_bands.
+ *
+ *  The bispectrum is strongly related to \ref products and is calculated as described in <i>Kakarala and D. Mao (2010)</i> (see \ref literature).
+ *
+ */

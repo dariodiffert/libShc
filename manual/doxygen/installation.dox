@@ -1,0 +1,59 @@
+
+/*! \page installation Installation
+ *
+ *  \b Content:
+ * 
+ *  The libShc.zip contains
+ *
+ *  - \b build: After running <i>make</i>, the library is build into this folder.
+ *  - \b examples: After running <i>make</i>, the examples are build into this folder. Note that all examples have to be started from within this folder due to the usage of local paths to the material folder.
+ *  - \b include: The header files are located in this folder.
+ *  - \b kissfft: The external library "kissFFT" to compute fast Fourier transforms is located in this folder.
+ *  - \b manual: Location of this manual.
+ *  - \b src: The source files (*.cpp) of the libShc and its extension libShx (including support for loading/saving images from the drive).
+ *  - \b src_examples: The source files (*.cpp) of the examples.
+ * 
+ *  \b Dependencies:
+ * 
+ *  The libShc heavily relies on "Eigen" for matrix and vector computations (see \ref literature).
+ *  Moreover, the optional class \ref classlayout "Shx" depends on "OpenCV" for reading/writing images from/to the drive (see \ref literature).
+ *  We chose OpenCV since it is widely spread in scientific community, however it can be simply replaced by an arbitrary image library by only changing a few lines (they are marked) of code in Shx.h and Shx_wrapper.cpp.
+ *  Furthermore the standard Unix library "The Realtime Extension" is used. To use this library under windows make sure to replace the calls for time measurements.
+ * 
+ *  We used the following software to build and test the libShc.
+ *
+ *  <table>
+ *  <tr><th> Software  <th> Version      <th> Source
+ *  <tr><td> Linux     <td> Ubuntu 16.04 <td> https://www.ubuntu.com/
+ *  <tr><td> GCC       <td> 5.4          <td> https://gcc.gnu.org/
+ *  <tr><td> Eigen     <td> 3.3.2        <td> http://eigen.tuxfamily.org/
+ *  <tr><td> OpenCV    <td> 3.2          <td> http://opencv.org/
+ *  <tr><td> OCamCalib <td> 3.0          <td> https://sites.google.com/site/scarabotix/ocamcalib-toolbox/
+ *  </table>
+ *  
+ *  \b Compiling:
+ * 
+ *  To compile enter the root folder <i>./libShc/</i> and run make.
+ *  The resulting libraries libShc.a and libShx.a are created in the "build" folder, the headers can be found in the "include" folder.
+ * 
+ *  <b>Quick Start:</b>
+ * 
+ *  Enter the directory libShc/ and enter the following to the console.
+ *
+ *  \code{.sh}
+ *  echo "Install dependency: Eigen (required)"
+ *  sudo apt-get install libeigen3-dev
+ *  echo "Install dependency: OpenCV (optional, required for direct image access via the class Shx)"
+ *  sudo apt-get install libopencv-dev
+ *  echo "Compile libShc"
+ *  make
+ *  echo "Done. Check out the examples/ directory!"
+ *  \endcode
+ * 
+ * 
+ *  \b Examples:
+ * 
+ *  After compiling, the examples can be found in <i>./libShc/examples/</i>.
+ *  Since local paths are used, make sure to run the examples from their local folder.
+ *
+ */

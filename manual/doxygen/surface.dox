@@ -1,0 +1,39 @@
+
+/** \page surface Surface
+ *
+ *  For the \ref fouriertransform the sphere \f$ S^2 \f$ needs to be discretized.
+ *  In the common case, the sphere is sampled by a given number of points euqally distributed over the sphere.
+ *  However, also custom surfaces can be initialized.
+ *  For example a bee eye by mimicking the distribution of omatidia:
+ *
+ *  \image html surface.png
+ *
+ *  The surface is defined by a set of samples,
+ *  where each sample points is described by a triplet \f$ (\vartheta_i, \varphi_i, w_i)\f$:
+ *  The first two entries \f$ \vartheta_i \f$ and \f$ \varphi_i \f$
+ *  are the sphericalcoordinates of the sample and \f$ w_i \f$ the weighting for the Fourier transform, compare \ref fouriertransform.
+ *
+ *  Surface data are stored in real-valued vectors.
+ *  shc::Shc::init_surface() can be used to initialize the surface (either equally distributed or),
+ *  the surface data itself can be obtained via shc::Shc::get_surface_data and shc::Shc::get_surface_size.
+ *
+ *  <b>Important</b>: To precalculate \ref translations it is necessary to use the equally distributed surface.
+ *  Use shc::Shc::init_files to load already precalculated translations into instances of shc::Shc which use custom surfaces.
+ *
+ *  ---
+ *
+ *  <b>Noise:</b>
+ *
+ *  Parts of the panoramic image might be unknown (e.g. small field of view), making it necessary to fill it with information.
+ *  For compass use, filling missing surface points with constant data is unfavourable since these parts will always be a good match in comparisons.
+ *  A simple alternative is to add noise in the unknown area via shc::Shc::init_noise.
+ *  Based on a user given amplitude spectrum, random noise is generated and used to fill the missing surface points.
+ *  If no amplitude spectrum is specified, a <i>default amplitude spectrum</i> is used.
+ *  This spectrum was obtained by collecting 50 full panoramic indoor and outdoor scenes and averaging their amplitude spectra.
+ *  The result has been approximated by the function
+ *  
+ *  \f$ (0.9983 + 0.9673 l + 0.0013 l^2)^{-1} \f$
+ *
+ *  to allow the calculation of amplitude spectra for arbitrary bands \f$ l \f$.
+ *  
+ */

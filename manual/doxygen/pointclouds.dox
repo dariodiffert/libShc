@@ -1,0 +1,14 @@
+/** \page pointclouds Pointclouds
+ *
+ *  A pointcloud is a vector containing a set of 3D coordinates.
+ *  By projecting a pointcloud on spheres with varying radii (compare <i>slices</i> from \ref translations),
+ *  the depth structure of the pointcloud is (partially) preserved.
+ *  The projection can be performed via shc::Shc::pointcloud2shpm.
+ *
+ *  Now we can apply the functionality of the libShc to work with (the projection of) pointclouds,
+ *  e.g. the compass and translations to align pointclouds.
+ *
+ *  <b>Note:</b> The visualization of pointcloud data is difficult since it is not automatically normalized to [0,1]!
+ *  If necessary, normalize the data before visualising it (e.g. via shc::Shc::normalize).
+ *
+ */ 

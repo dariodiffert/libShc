@@ -1,0 +1,17 @@
+
+/** \page noise Noise
+ *
+ *  Most panoramic imaging devices are not capable of capturing full panoramic images.
+ *  Since the libShc works - since it is based on spherical harmonics - only on full panoramic images,
+ *  undefined areas must be filled-in.
+ *  
+ *  The most simple approach is to fill in blank information (i.e. "black"), however this is a poor approach for using the visual 3D compass.
+ *  As our experiments showed, white noise works well with the visual 3D compass.
+ *  Alternatively, we used noise which imitates the average amplitude spectrum of panoramic images captured in outdoor environments.
+ *
+ *  \image html noise.png
+ *
+ *  If noise is enabled, the lower hemisphere is filled with noise by default (180 deg. fish-eye lens).
+ *  However, arbritrary areas of the panoramic image can be filled with noise.
+ *
+ */  

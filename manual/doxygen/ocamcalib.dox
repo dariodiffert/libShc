@@ -1,0 +1,9 @@
+/** \page ocamcalib OcamCalib
+ *  The OcamCalib is a powerful tool to calibrate omnidirectional imaging devices as for example fish-eye cameras.
+ *  The libShc has a built-in support for the OcamCalib to unwrap camera images into panoramic images (as required by the libShc).
+ *  The user only needs to calibrate the camera first using the OCamCalib to create the required <b>calib_results.txt</b> file.
+ *
+ *  For a simple example, see <b>src_examples/ocamcalib.cpp</b>.
+ *
+ *  The OcamCalib can be downloaded from https://sites.google.com/site/scarabotix/ocamcalib-toolbox/.
+ */

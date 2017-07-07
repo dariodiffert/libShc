@@ -1,0 +1,67 @@
+
+/** \page fouriertransform Spherical Harmonics & Fourier Transform
+ *
+ *  <b>Sphecrical Harmonics:</b>
+ *
+ *  The spherical harmonics (in this library we only consider the real case) is a set of functions 
+ *
+ *  \f$
+ *  y^l_m(\vartheta,\varphi) =
+ *  \begin{cases}
+ *  \sqrt{2} K^l_m \cos(m \varphi) P^l_m(\cos \vartheta), & m > 0; \\
+ *  \sqrt{2} K^l_m \sin(-m \varphi) P^l_m(\cos \vartheta), & m < 0; \\
+ *  K^l_0 P^l_0(\cos \vartheta), & m = 0.
+ *  \end{cases}
+ *  \f$
+ *
+ *  defined on the surface of the sphere \f$ S^2 \f$.
+ *  The variables \f$ \varphi \f$ and \f$ \vartheta \f$ describe the spherical coordinates in the standard physical notation,
+ *  the normalization term is given by
+ *
+ *  \f$ 
+ *  K^l_m = \sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}}
+ *  \f$ 
+ *
+ *  and \f$ l \in \mathbb{N} \f$, \f$ m \in \mathbb{Z} \f$ with \f$ |m| < l \f$ are indices.
+ *
+ *  The spherical harmonics form an orthonormal basis and <i>behave well</i> under rotations
+ *  (more precisely they represent rotations itself, compare Wigner-D functions).
+ *  Analogously to the basis functions \f$ \cos(lx) \f$ and \f$ \sin(lx) \f$ with \f$ l \in \mathbb{N} \f$  used for the standard 1D Fourier transformation,
+ *  the spherical harmonics can be ordered by their frequency (called band) \f$ l \f$:
+ *
+ *  \image html sh_basis.png
+ *
+ *  ---
+ *
+ *  <b>Fourier Transform:</b>
+ *
+ *  Let \f$ f \f$ be an arbitrary real-valued function defined on the sphere,
+ *  then it can be projected into the basis of spherical harmonics as usual via
+ *
+ *  \f$ 
+ *  a^l_m := \langle f, y^l_m \rangle = \int_S f(s) y^l_m(s) ds
+ *  \f$ 
+ *
+ *  and call \f$ a^l_m \f$ the Fourier coefficients (compare \ref storingorders).
+ *  It can be shown that \f$ f \approx \sum_{m,l} a^l_m y^l_m \f$ converges quadratically in \f$ L^2(S^2) \f$.
+ *  For more information about Fourier analysis on the sphere, see \ref literature.
+ *
+ *  \image html ft.png
+ *
+ *  The figure shows how an arbitrary function on the sphere can be represented by a linear combination of spherical harmonics.
+ *  Note that for \ref hemisphericalcontinuations only the upper sphere is used for the Fourier transform.
+ *
+ *  ---
+ *
+ *  <b>Fast Fourier Transform (FFT):</b>
+ *
+ *  Analogously to the <i>Fast Fourier Transform</i> on 1D and 2D data,
+ *  the computational effort of the Fourier Transform on the sphere can be reduced by exploiting symmetries.
+ *  We implemented an adapted version of the algorithm described in <i>Kostelec and Rockmore (2008)</i>, see \ref literature,
+ *  which reduces the FFT on the sphere to the standard FFT by seperation of variables.
+ *  The standard FFT is performed using the <i>kissFFT</i> library (see \ref installation).
+ *  To enable/disable FFT use shc::Shc::init_surface.
+ *
+ */
+ 
+ 

@@ -1,0 +1,34 @@
+
+/** \page products Products
+ *
+ *  For two functions \f$ f,g\f$ defined on the unit sphere, the pointwise product \f$ f \cdot g \f$ can be calculated directly in the basis of spherical harmonics using the <b>Clebsch-Gordan</b> coefficients.
+ *  These coefficients describe the <i>coupling</i> between different bands and are a well-studied subject in physics.
+ *  We calculate the Clebsch-Gordan coefficients as stated in <i>Straub (2015)</i> (see \ref literature).
+ *
+ *  Note that the maximal number of bands for the the pointwise product between two functions \f$ f,g \f$ is \f$ L_f+L_G \f$,
+ *  where \f$ L_f, L_G \f$ are the maximal number of bands for \f$ f \f$ and \f$ g \f$, respectively.
+ *
+ *  ---
+ *
+ *  <b>Computation Time:</b>
+ *
+ *  In libShc the number of maximal bands \f$ L \f$ and the number of maximal bands for Clebsch-Gordan coefficients \f$ L_{CG} \f$ can be set individually by shc::Shc::init_bands allowing to tweak the calculation:
+ *
+ *  \image html products.png
+ *
+ *  The time measurements (which have been performed under equal conditions) show that for an increasing value of \f$L_{CG}\f$ the computation time increases significantly.
+ *  However, by setting an appropriate tolerance value via shc::Shc::init_tolerances for Clebsch-Gordan matrices the computation time can be reduced with only minor corruption of the data.
+ *
+ *  ---
+ *
+ *  <b>Tweaking:</b>
+ *
+ *  The computation times can be decreased by:
+ *  
+ *  - Setting the tolerance value as shown above.
+ *  - Using as few bands as possible to Fourier transform the functions \f$ f \f$ and \f$ g \f$. For example, if \f$ g \f$ is a hemispherical mask it might be sufficient to use a small number of bands \f$ L_g \f$ for the Fourier transform of \f$ g \f$.
+ *  - The benefits of \ref hemisphericalcontinuations also apply to products.
+ *
+ *  Note that all these tweaks also apply to the calculation of the bispectrum (see \ref spectra).
+ *
+ */

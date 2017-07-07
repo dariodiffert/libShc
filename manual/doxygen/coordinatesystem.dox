@@ -1,0 +1,16 @@
+
+/** \page coordinatesystem Coordinate System
+ *  The coordinate system in this library was chosen to fit a special task, namely visual navigation.
+ *  While the library can be used for arbitrary tasks, the <i>coordinate system conventions</i> are fixed:
+ *
+ *  \image html coordinate_system1.png
+ * 
+ *  The global coordinate system is right-handed.
+ *  If we assume an agent mounted with an hemispherical camera (figure, left), then the visual axis of the camera is aiming upwards along the Z-axis and the moving direction of the agent is along the X-axis.
+ *  The panoramic image obtained by the camera (figure, right; for a hemispherical camera only the upper half is visible) can be wrapped around the agent and shows the environment.
+ *  Notice that the <i>spherical coordinates</i> of \f$ \varphi \f$ in the panoramic image are therefore mirrored:
+ *
+ *  \image html coordinate_system2.png
+ *
+ * Furthermore, they use the physical notation with \f$ \vartheta = 0 \f$ at the <i>north pole</i> as sketched above.
+ */

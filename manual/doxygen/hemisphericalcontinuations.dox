@@ -1,0 +1,17 @@
+
+/** \page hemisphericalcontinuations Hemispherical Continuations
+ * 
+ *  To perform the \ref fouriertransform, it is required a real-valued function \f$ f \f$ is defined on the <i>complete</i> sphere,
+ *  however in practical applications (e.g. for hemispherical cameras) there might not be sufficient data available:
+ *
+ *  \image html contin_full.png
+ *
+ *  In this library four different continuations --- which can be obtained from symmetrical properties of the spherical harmonics --- can be chosen to fill-in the lower hemisphere with data <i>automatically</i>: 
+ *
+ *  \image html contin.png
+ *
+ *  The continuations <i>HEMI_RM</i> and <i>HEMI_RMN</i> reduce the computation times significantly.
+ *  The continuation mode can be chosen (optionally) whenever a new instance of shc::Shpm is created by passing the preferred hemispherical continuation as argument.
+ *
+ *  For all hemispherical continuations only the upper hemisphere is used for the \ref fouriertransform.
+ */

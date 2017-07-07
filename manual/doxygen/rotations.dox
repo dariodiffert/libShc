@@ -1,0 +1,50 @@
+
+/** \page rotations Rotations
+ *
+ *  The spherical harmonics are mathematically strongly related to rotations and <i>behave well</i> under rotational operations.
+ *  Make sure to use the correct \ref coordinatesystem for rotations.
+ *
+ *  In this toolbox several methods are combined to reduce the computation time for both the rotation matrices and performning rotations:
+ *
+ *  - <b>Sparsity:</b> Several sparsity relations (see below) are used.
+ *  - <b>Hemispherical Continuation:</b> Some \ref hemisphericalcontinuations furthermore increase the sparsity of the rotation matrices.
+ *  - <b>Coarse-to-Fine:</b> Multiple rotations can be performed one after another (with increasing accuracy) to reduce the total number of rotation matrices needed.
+ *  
+ *  ---
+ *  
+ *  <b>Sparsity:</b>
+ *
+ *  For a fixed rotation the corresponding rotation matrix in the basis of spherical harmonics has the following form
+ *  
+ *  \image html sparsity_R.png
+ *  
+ *  As it can be seen, these rotation matrices are sparse and built up from block matrices (red marking) allowing fast calculations.
+ *  However, the calculation of the rotation matrix itself can be --- depending on the number of bands used --- computational expensive.
+ *  To calculate arbitrary rotation matrices we implemented the recursive formulas stated in <i>Ivanic and Ruedenberg (1996)</i> (see \ref literature).
+ *  By applying rotations around a single axis, the following sparsity relations can be derived for each block:
+ *
+ *  \image html sparsity_XYZ.png
+ *
+ *  Besides showing the sparsity, in this figure it is shown that many entries even disappear for \f$ \pm 90^\circ \f$ rotations (red entries become zero) and that transposed entries either have the same value (both entries are marked by a plus) or are the negative of each other (lower triangle entry has a minus).
+ *  Therefore it is sufficient to calculate the upper triangle only, halving the computation time.
+ *
+ *  ---
+ *
+ *  <b>Hemispherical Continuations:</b>
+ *
+ *  Additionally to the sparsity relations mentioned above, the sparsity relations induced by the hemispherical continuation speed up <i>all</i> rotations.
+ *  See \ref hemisphericalcontinuations for more information.
+ *
+ *  ---
+ *
+ *  <b>Coarse-to-Fine:</b>
+ *
+ *  By calling shc::Shc::init_rotations_sphere, shc::Shc::init_rotations_cone, and shc::Shc::init_rotations_custom, rotation matrices can be precalculated.
+ *
+ *  Each one adds a <i>set of rotation matrices</i> to the shc::Shc instance.
+ *  By calling any function related to rotations, all sets of rotations are used in the order they were initialized to perform the rotation.
+ *
+ *  For example you can <i>first</i> add a set of rotations covering angles up to \f$ 50^\circ \f$ in \f$ 10^\circ \f$ steps
+ *  and <i>afterwards</i> add another set of finer rotations covering angles up to \f$ 10^\circ \f$ in \f$ 1^\circ \f$ steps.
+ *  Multiple sets of rotations always <i>increase</i> the computation time to compute rotations via shc::Shc::rotate, while they <i>decrease</i> the computation times for shc::Shc::compass.
+ */

@@ -1,0 +1,38 @@
+
+/** \page tangentdistance Tangent Distance
+ *
+ *  <b>Basics:</b>
+ *
+ *  The tangent distance is a method developed by <i>Simard, Le Cun, Denker, Victorri (2002)</i> (see \ref literature) which can be used to increase the invariance of difference measures against small transformations.
+ *
+ *  \image html tangentDistance.png
+ *
+ *  The idea is to approximate the effect of a transformation on the feature vector by linearization as shown in the figure.
+ *  The transformation itself has commonly a non-linear effect on the feature vector, however for small changes the linearization should approximate the effect.
+ *
+ *  In our implementation an arbitrary number of transformations (represented by its transformation matrix in the basis of spherical harmonics) can be added via shc::Shc::add_tangent_distance.
+ *  To enable the tangent distance call shc::Shc::set_tangent_distance.
+ *  By calling shc::Shc::clear_tangent_distance all transformation matrices are removed.
+ *
+ *  For example, the \ref compass determines the rotation between two rotationally misaligned panoramic images. 
+ *  However, the performance of the compass is reduced if the panoramic images have been captured at different positions.
+ *
+ *  ---
+ *
+ *  <b>One/Two-Sided</b>:
+ *
+ *  The tangent distance can be calculated as a one-sided (as shown in the sketch) or two-sided approach.
+ *  While the two-sided approach increases the invariance for the given transformations, its calculation is computational expensive.
+ *  For the single-sided tangent distance precalculations can be done if a <i>single</i> feature is compared to a <i>set</i> of other features (e.g. compass, see above).
+ *
+ *  <b>Note</b> For consistency the one-sided tangent distance is <i>always</i> applied to the second shc::Shpm argument passed to the functions shc::Shc::get_feature_difference and shc::Shc::compass.
+ *
+ *  ---
+ *
+ *  <b>Spring Constant:</b>
+ *
+ *  For the calculation of the tangent distance the inverse of matrices has to be calculated.
+ *  A <i>spring constant</i> can be set via shc::Shc::set_tangent_distance to reduce the vulnerability of the tangent distance to ill-valued matrix inversions.
+ *  For details see <i>Simard, Le Cun, Denker, Victorri (2002)</i> (see \ref literature).
+ *
+ */  

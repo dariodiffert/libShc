@@ -1,0 +1,19 @@
+
+/** \page transforms Transforms
+ *
+ *  The libShc provides different ways to calculate \ref rotations and \ref translations directly in the basis of spherical harmonics.
+ *  In order to do this, several rotation and translation matrices can be precalculated and used.
+ *  However, there are cases where functionality might be missing:
+ *
+ *  - A desired transformation is not a translation, rotation, or concatenation of these.
+ *  - The transformation is exactly known and should directly be applied. This decreases the computation time, since neither coarse-to-fine rotations nor interpolations for the translation have to be calculated.
+ *
+ *  Therefore it is possible to add arbitrary transformations to libShc such that all computational benefits from \ref hemisphericalcontinuations can be applied.
+ *
+ *  For a given transformation in the basis of spherical harmonics, the function shc::Shc::add_transform can be used to add it to the list of available transforms.
+ *  Added transformations can be applied by calling shc::Shc::transform.
+ *  To remove all transformations from the current instance, call shc::Shc::clear_transform.
+ *
+ *  Since the calculation of transformation matrices and adding them is a time consuming task, the current list of transforms can be saved/loaded to/from files via shc::Shc::save_transform and shc::Shc::load_transform, respectively.
+ *
+ */

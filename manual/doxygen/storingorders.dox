@@ -1,0 +1,32 @@
+
+/** \page storingorders Storing Orders
+ *
+ *  Fourier coefficients (\ref fouriertransform) and \ref spectra are stored in real-valued vectors.
+ *  For a maximal band \f$ L \f$, the storing order of the coefficients are as follows:
+ *
+ *  <b>Fourier coefficients</b>:
+ *  A total of \f$ L^2 \f$ Fourier coefficients \f$ a^l_m \f$ with \f$ 0 \le l < L \f$ and \f$ |m| \le l \f$ is stored in an increasing order of \f$ l \f$ (primary) and \f$ m \f$ (secondary):
+ *
+ *  \f$ a^0_0, a^1_{-1}, a^1_{0}, a^1_{1}, a^2_{-2}, a^2_{-1}, a^2_{0}, a^2_{1}, a^2_{2},... \f$
+ * 
+ *  <b>Amplitude spectrum</b>: A total of \f$ L \f$ amplitude spectrum coefficients \f$ A^l \f$ with \f$ 0 \le l < L \f$  is stored in an increasing order of \f$ l \f$:
+ *
+ *  \f$ A^0, A^1, A^2, A^3, ... \f$ 
+ *
+ *  <b>Bispectrum</b>: For a maximum band \f$ L \f$ the total number of bispectrum coefficients is given by \f$ L^2 + \frac{L(L-1)(2L-1)}{6} \f$.
+ *  Each coefficient has three indices \f$ B^{l,k}_i \f$.
+ *  First (most outer loop), the coefficient \f$ 0 \le l < L \f$ is iterated,
+ *  followed by \f$ l \le k < L \f$ and finally \f$ k-l \le i \le k+l \f$ (most inner loop).
+ *  The storing order is therefore:
+ *
+ *  \f$  
+ *  B^{0,0}_0, B^{0,1}_1, B^{0,2}_2, ...,
+ *  B^{1,1}_0, B^{1,1}_1, B^{1,1}_2, B^{1,2}_1, B^{1,2}_2, B^{1,2}_3, ...,
+ *  B^{2,2}_0, B^{2,2}_1, B^{2,2}_2, B^{2,2}_3, B^{2,2}_4, ...,
+ *  \f$ 
+ *
+ *  <b>Indexing functions</b>
+ *
+ *  The functions shc::Shc::get_feature_index_sh(), shc::Shc::get_feature_index_as(), and shc::Shc::get_feature_index_bs()
+ *  can be used to compute the index of a given entry of an amplitude or bispectrum.
+ */

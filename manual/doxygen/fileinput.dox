@@ -1,0 +1,21 @@
+
+/** \page fileinput File Input
+ *  
+ *  Some functions allow to read data from text files (shc::Shc::init_surface, shc::Shc::load_pointcloud).
+ *  For these functions, each row represents one tuplet of data (e.g. a coordinate),
+ *  single entries are separated by commas as shown in the following example:
+ *
+ *  \code
+ *  ...
+ *  2.834,1.1917,1.3251
+ *  2.834,1.369,1.4355
+ *  2.834,1.5633,1.7226
+ *  2.834,1.7762,1.7226
+ *  2.834,1.9944,1.566
+ *  2.834,2.2173,1.566
+ *  ...
+ *  \endcode
+ *
+ *  Note that angles are always passed in radians and that there is no check for the consistency of the data/format.
+ *  Corrupt data (e.g. wrong delimiters) may lead to undefined behavior.
+ */

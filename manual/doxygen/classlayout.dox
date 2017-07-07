@@ -1,0 +1,25 @@
+
+/*! \page classlayout Class Layout
+ *
+ * The following scheme gives a coarse overview of the classes and how they are connected:
+ *
+ * \image html class_overview.png
+ * 
+ * The base class shc::Shc contains the complete functionality to operate in the basis of real spherical harmonics. 
+ * To keep the number of dependencies as small as possible, image loading and writing --- is implemented in the class shc::Shx.
+ * Panoramic images are stored as real-valued matrices and Fourier coefficients, surface informations, etc are stored as real-valued vectors.
+ * 
+ * The extension shc::Shx adds an additional layer, giving access to several highlevel functions. These functions can be used to operate with images via OpenCV (\ref installation).
+ * For common use the shc::Shx class should be the way to go.
+ * 
+ * Each panel represents a helper class (or typedef) on which the main classes shc::Shc and shc::Shx operate.
+ * They store all necessary information about spherical functions in both the spartial and frequency space.
+ * 
+ * 
+ * The following diagram shows a more practical view on the used helper classes:
+ * 
+ * \image html class_practical.png
+ * 
+ * Note that the dimensions of a panoramic image can be arbitrary. The data just has to be stored as shown in \ref coordinatesystem.
+ */ 
+ 

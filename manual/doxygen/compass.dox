@@ -1,0 +1,55 @@
+/** \page compass Visual Compass
+ *
+ *  <b>Visual Compass:</b>
+ *
+ *  The visual compass is a simple method to determine the rotational offset between two different views. 
+ *  The most simple case is to detect a Z-axis only rotation as sketched in the following figure
+ *  
+ *  \image html compass.png
+ *  
+ *  A <i>current view</i> and a <i>snap shot</i> are recorded at the same position but with a rotational misaligned.
+ *  Now we simulate several rotation <i>hypotheses</i> by transforming the current view.
+ *  For each of these rotation hypotheses we can calculate the <i>image difference</i> to the snapshot.
+ *  The rotation hypotheses which minimizes the image difference estimates the rotational misalignment between both views.
+ *
+ *  In libShc a 3D visual compass is implemented via shc::Shc::compass to determine arbitrary rotations between two views.
+ *  Depending on the initialized rotations (see \ref rotations), the search space and resolution can be adjusted.
+ *  The norm used to calculate the difference can be set via shc::Shc::set_feature_norm and a normalization via shc::Shc::set_feature_normalize.
+ *  If the \ref tangentdistance is enabled, the general robustness against transformations (e.g. rotations or translations) can be increaed.
+ *  Note that the compass can only use the single-sided tangent distance.
+ *
+ *  ---
+ *
+ *  <b>Masked Visual Compass:</b>
+ *
+ *  In some applications it might be useful to mask particular regions of an image,
+ *  e.g. corrupted image data or the part occluded by the camera.
+ *  The following figure shows an example for a strongly corrupted image:
+ *
+ *  \image html compass_masked.png
+ *
+ *  We can now use shc::Shc::compass to align both images.
+ *  In this example, both images are already aligned and we want to see the effect of the corrupted area on the visual compass.
+ *
+ *  <b>Without using masks:</b>
+ *
+ *  \image html compass_masked_1.png
+ *
+ *  As it can be seen, the corrupted regions are mapped on each other.
+ *  However, the image itself is not aligned:
+ *  The two different buildings are mixed and the horizon does not match well.
+ *
+ *  <b>With using masks:</b>
+ *
+ *  \image html compass_masked_2.png
+ *
+ *  By using masks we can exclude the corrupted areas such that both images are correctly aligned.
+ *
+ *  Since the calculation using masks includes two calculations of \ref products for each compass step,
+ *  <i>the calculation times may increase strongly!</i> 
+ *  The calculation times can be reduced as follows:
+ *
+ *  - Use masks which can be approximated by as few bands as possible (e.g. a hemispherical mask). Set the parameter <i>l_max</i> of the instance of shc::Shpm containing mask information as small as possible.
+ *  - Since the result of a \ref products has maximal band \f$ L_f+L_G \f$, where \f$ L_f \f$ and \f$ L_g \f$ are the maximal bands of the single functions, it may exceed the maximal band set for the mask. This can be prohibited by setting the maximal band for Clebsch-Gordan coefficients via shc::Shc::init_bands.
+ *  - Speed improvements from \ref hemisphericalcontinuations also apply to the masked compass. Note that it is commonly not senseful for masks.
+ */

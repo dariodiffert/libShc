@@ -1,0 +1,36 @@
+
+/*! \mainpage libShc --- Mainpage
+ *
+ *  \section main_start Getting started
+ *
+ *  - \ref installation
+ *  - \ref firststeps
+ *  - \ref literature
+ *  - \ref pitfalls
+ *  
+ *  \section main_basics Basics
+ *
+ *  - \ref classlayout
+ *  - \ref coordinatesystem
+ *  - \ref storingorders
+ *  - \ref hemisphericalcontinuations
+ *  - \ref rotationparameters
+ *  - \ref fileinput
+ *  
+ *  \section main_functionality Functionality
+ *  
+ *  - \ref fouriertransform
+ *  - \ref surface
+ *  - \ref noise
+ *  - \ref compass
+ *  - \ref rotations
+ *  - \ref translations
+ *  - \ref transforms
+ *  - \ref products
+ *  - \ref tangentdistance
+ *  - \ref spectra
+ *  - \ref ocamcalib
+ *  - \ref pointclouds
+ *  
+ */
+ 

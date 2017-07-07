@@ -1,0 +1,7 @@
+/** \page pitfalls Pitfalls
+ * Here we will show a list of known pitfalls, i.e. problems you might encounter which are not necessarily bugs.
+ * - <b> Always get rid of all warnings before continuing, except you exactly know what you do! </b>
+ * - Rotations are passed and returned in <i>radians</i>!
+ * - Study the \ref coordinatesystem carefully to avoid problems on reading panoramic images and rotating data. They are the same for all used types of data, e.g. shc::Shpm, \ref pointclouds, etc.
+ * - For constistency the one-sided tangent distance is <i>always</i> applied to the second Shpm argument passed to the functions shc::Shc::get_feature_difference and shc::Shc::compass.
+ */

@@ -1,0 +1,118 @@
+\form#0:$ 180^\circ $
+\form#1:$ v_1, v_2 $
+\form#2:$ |v_1 - v_2| $
+\form#3:$ \|v_1 - v_2\| $
+\form#4:$ \|v_1 - v_2\|_\infty $
+\form#5:$ f $
+\form#6:$ f,g $
+\form#7:$ \int_{S^2} (f(s)-g(s))^2 ds = \|a_f-a_g\|^2 $
+\form#8:$ \mathbf{M} $
+\form#9:$ \mathbf{M} = \bigoplus_i \mathbf{M}_i $
+\form#10:$ \begin{pmatrix} 1 & 0 & -1 \\ 2 & 0 & -2 \\ 1 & 0 & -1 \end{pmatrix} $
+\form#11:$ \begin{pmatrix} 1 & 2 & 1 \\ 0 & 0 & 0 \\ -1 & -2 & -1 \end{pmatrix} $
+\form#12:$ \begin{pmatrix} 1 & 0 & -1 \\ 1 & 0 & -1 \\ 1 & 0 & -1 \end{pmatrix} $
+\form#13:$ \begin{pmatrix} 1 & 1 & 1 \\ 0 & 0 & 0 \\ -1 & -1 & -1 \end{pmatrix} $
+\form#14:$ \begin{pmatrix} 0 & 1 & 0 \\ 1 & -4 & 1 \\ 0 & 1 & 0 \end{pmatrix} $
+\form#15:$ \begin{pmatrix} 1 & 2 & 1 \\ 2 & -12 & 2 \\ 1 & 2 & 1 \end{pmatrix} $
+\form#16:$ \frac{1}{9}\begin{pmatrix} 1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1 \end{pmatrix} $
+\form#17:$ \frac{1}{16}\begin{pmatrix} 1 & 2 & 1 \\ 2 & 4 & 2 \\ 1 & 2 & 1 \end{pmatrix} $
+\form#18:$ \mathbf{I'} = |\mathbf{I} * \mathbf{K}| $
+\form#19:$ \mathbf{I'} = |\mathbf{I} * \mathbf{K_1}| + |\mathbf{I} * \mathbf{K_2}| $
+\form#20:$ L_f+L_G $
+\form#21:$ L_f $
+\form#22:$ L_g $
+\form#23:$ \varphi $
+\form#24:$ \vartheta = 0 $
+\form#25:$ y^l_m(\vartheta,\varphi) = \begin{cases} \sqrt{2} K^l_m \cos(m \varphi) P^l_m(\cos \vartheta), & m > 0; \\ \sqrt{2} K^l_m \sin(-m \varphi) P^l_m(\cos \vartheta), & m < 0; \\ K^l_0 P^l_0(\cos \vartheta), & m = 0. \end{cases} $
+\form#26:$ S^2 $
+\form#27:$ \vartheta $
+\form#28:$ K^l_m = \sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}} $
+\form#29:$ l \in \mathbb{N} $
+\form#30:$ m \in \mathbb{Z} $
+\form#31:$ |m| < l $
+\form#32:$ \cos(lx) $
+\form#33:$ \sin(lx) $
+\form#34:$ l $
+\form#35:$ a^l_m := \langle f, y^l_m \rangle = \int_S f(s) y^l_m(s) ds $
+\form#36:$ a^l_m $
+\form#37:$ f \approx \sum_{m,l} a^l_m y^l_m $
+\form#38:$ L^2(S^2) $
+\form#39:$ f,g$
+\form#40:$ f \cdot g $
+\form#41:$ L_f, L_G $
+\form#42:$ g $
+\form#43:$ L $
+\form#44:$ L_{CG} $
+\form#45:$L_{CG}$
+\form#46:$ \pm 90^\circ $
+\form#47:$ 50^\circ $
+\form#48:$ 10^\circ $
+\form#49:$ 1^\circ $
+\form#50:$ L^2 $
+\form#51:$ 0 \le l < L $
+\form#52:$ |m| \le l $
+\form#53:$ m $
+\form#54:$ a^0_0, a^1_{-1}, a^1_{0}, a^1_{1}, a^2_{-2}, a^2_{-1}, a^2_{0}, a^2_{1}, a^2_{2},... $
+\form#55:$ \mathcal{A^l} $
+\form#56:$ \mathcal{A^0}, \mathcal{A^1}, \mathcal{A^2}, \mathcal{A^3}, ... $
+\form#57:$ L^2 + \frac{L(L-1)(2L-1)}{6} $
+\form#58:$ \mathcal{B}^{l,k}_i $
+\form#59:$ l \le k < L $
+\form#60:$ k-l \le i \le k+l $
+\form#61:$ \mathcal{B^{0,0}_0}, \mathcal{B^{0,1}_1}, \mathcal{B^{0,2}_2}, ..., \mathcal{B^{1,1}_0}, \mathcal{B^{1,1}_1}, \mathcal{B^{1,1}_2}, \mathcal{B^{1,2}_1}, \mathcal{B^{1,2}_2}, \mathcal{B^{1,2}_3}, ..., \mathcal{B^{2,2}_0}, \mathcal{B^{2,2}_1}, \mathcal{B^{2,2}_2}, \mathcal{B^{2,2}_3}, \mathcal{B^{2,2}_4}, ..., $
+\form#62:$ (\vartheta_i, \varphi_i, w_i)$
+\form#63:$ \vartheta_i $
+\form#64:$ \varphi_i $
+\form#65:$ w_i $
+\form#66:$ (0.9983 + 0.9673 l + 0.0013 l^2)^{-1} $
+\form#67:$ 0 \le t \le 1.5 $
+\form#68:$ r=1 $
+\form#69:$ t > 1 $
+\form#70:$ r = 1 $
+\form#71:$ n $
+\form#72:$ n^2 $
+\form#73:$ (0^\circ,180^\circ) $
+\form#74:$ (0^\circ, 360^\circ) $
+\form#75:$ 120^\circ $
+\form#76:$ 220^\circ$
+\form#77:$ \frac{1.0}{\sqrt{2 \piP s^2}} e^{-\frac{(x-c)^2}{2 s^2}} $
+\form#78:$ \frac{1.0}{\sqrt{2 \pi s^2}} e^{-\frac{(x-c)^2}{2 s^2}} $
+\form#79:$ \frac{1}{\sqrt{2 \pi s^2}} e^{-\frac{(x-c)^2}{2 s^2}} $
+\form#80:$ [0, 2\pi) $
+\form#81:$ (\vartheta, \varphi) $
+\form#82:$ \pi/2, 0 $
+\form#83:$ f(x) = y $
+\form#84:$ y = f(x) $
+\form#85:$ R_1, R_2 $
+\form#86:$ R_1^T R_2 $
+\form#87:$ [0,\pi] $
+\form#88:$ 90^\circ $
+\form#89:$ \mathtext{rotation_angles} = \{ 0^\circ, 90^\circ, 180^\circ, 270^\circ \} $
+\form#90:$ \mathtext{indices_z} = \{ 0,1,2,3 \} $
+\form#91:$ 0^\circ $
+\form#92:$ \mathtext{indices_y} = \{ 0,2 \} $
+\form#93:$ \mathtext{indices_x} = \{ 0 \} $
+\form#94:$ rotation_angles = \{ 0^\circ, 90^\circ, 180^\circ, 270^\circ \} $
+\form#95:$ indices_z = \{ 0,1,2,3 \} $
+\form#96:$ indices_y = \{ 0,2 \} $
+\form#97:$ indices_x = \{ 0 \} $
+\form#98:$ [0,2\pi] $
+\form#99:$ u,v $
+\form#100:$ \| u - v \| $
+\form#101:$ \frac{\| u - v \|}{\|u\| + \|v\|} $
+\form#102:$ (\vartheta, \varphi, w) $
+\form#103:$ l^2 \times l^2 $
+\form#104:$ \frac{1}{2} \left(\mathbf{R}_{v,\alpha} + \mathbf{R}_{v,-\alpha}\right) $
+\form#105:$ v $
+\form#106:$ \alpha $
+\form#107:$ \frac{1}{2} \left(\mathbf{R}_{v,d} + \mathbf{R}_{v,-d}\right) $
+\form#108:$ d $
+\form#109:$ v,w $
+\form#110:$ u = av + bw $
+\form#111:$ |l_1 - l_2| \le 1 $
+\form#112:$ 2i+1 \times 2i+1 $
+\form#113:$ A^0, \mathcal{A^1}, \mathcal{A^2}, \mathcal{A^3}, ... $
+\form#114:$ A^l $
+\form#115:$ A^0, A^1, A^2, A^3, ... $
+\form#116:$ B^{l,k}_i $
+\form#117:$ B^{0,0}_0, B^{0,1}_1, B^{0,2}_2, ..., B^{1,1}_0, B^{1,1}_1, B^{1,1}_2, B^{1,2}_1, B^{1,2}_2, B^{1,2}_3, ..., B^{2,2}_0, B^{2,2}_1, B^{2,2}_2, B^{2,2}_3, B^{2,2}_4, ..., $

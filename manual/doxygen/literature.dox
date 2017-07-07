@@ -1,0 +1,18 @@
+
+/*! \page literature Literature
+ *
+ *  The libShc is based on the theoretical work of many other people. Here we list some publications which had a major influence on the implementations:
+ *  A comprehensive literature overview will be available soon.
+ *
+ * <table>
+ * <tr><th> Publication <th> Subject
+ * <tr><td> <b>Differt and Möller (2015)</b>. Insect models of illumination-invariant skyline extraction from UV and green channels. <i>Journal of Theoretical Biology</i>, 380(7):444–462. <td> Image thresholding
+ * <tr><td> <b>Ivanic and Ruedenberg (1996)</b>. Rotation matrices for real spherical harmonics. Direct determination by recursion. <i>The Journal of Physical Chemistry</i>, 100(15):6342–6347. <td> Calculation of rotation matrices
+ * <tr><td> <b>Kakarala and Mao (2010)</b>. A theory of phase-sensitive rotation invariance with spherical harmonic and moment-based representations. In <i>Conference on Computer Vision and Pattern Recognition (CVPR)</i>, p. 105-112. <td> Calculation of bispectra
+ * <tr><td> <b>Kostelec and Rockmore (2008)</b>. FFTs on the rotation group. <i>Journal of Fourier Analysis and Applications</i>, p. 145-179. <td> Fast Fourier Transform
+ * <tr><td> <b>Marinucci and Peccati (2011)</b>: Random fields on the sphere. <i>Cambridge University Press</i>, Cambridge, Massachusetts, 1st edition. <td> Overall theoretical background
+ * <tr><td> <b>Scaramuzza, Martinelli, and Siegwart (2006)</b>: A Toolbox for Easy Calibrating Omnidirectional Cameras, <i>Proceedings to International Conference on Intelligent Robots and Systems (IROS 2006)</i>, Beijing China, 2006 <td> Panoramic mapping (OCamCalib)
+ * <tr><td> <b>Simard, Le Cun, Denker, Victorri (2002)</b>: Transformation invariance in pattern recognition: Tangent distance and propagation, In <i>Lecture Notes in Computer Science</i>, p.235-269, 2002. <td> Tangent Distance
+ * <tr><td> <b>Straub (2015)</b>: Efficient computation of Clebsch-Gordan coefficients. http://vixra.org/abs/1403.0263. [Online; accessed 28-April-2015] <td> Calculation of Clebsch-Gordan coefficients
+ * </table>
+ */  

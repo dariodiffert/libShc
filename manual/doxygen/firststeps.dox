@@ -1,0 +1,22 @@
+
+/** \page firststeps First steps
+ * The libShc has been designed to be as <i>easy to use</i> as possible while maintaining a high degree of flexibility.
+ * 
+ * The class Shx uses the external libs OpenCV (\ref installation) to read and write panoramic images.
+ * Furthermore OCamCalib (\ref installation) calibration files can be read to automatically unwrap images from panoramic sensors.
+ * See <i>libShc/src_examples/simple.cpp</i> for a basic example of how to use the libShc.
+ * 
+ * The libShc provides a wide range of functions to work with Fourier Transformed data (on the sphere), the most important are described in \ref fouriertransform, \ref surface, \ref compass, \ref rotations, \ref translations, \ref products, \ref spectra, and \ref pointclouds.
+ * 
+ * To get an idea of how to work with the libShc, you should read the basics about the \ref classlayout, \ref coordinatesystem, \ref storingorders, \ref hemisphericalcontinuations, \ref rotationparameters and \ref fileinput.
+ * Various examples are provided in the folder <i>libShc/src_examples</i>.
+ * 
+ * Finally, make sure to read the \ref pitfalls section carefully, since you might encounter these while using libShc.
+ * 
+ * ---
+ * 
+ * \b Advanced:
+ *
+ * While panoramic images provide the easiest way to handle functions defined on the unit sphere, it is also possible to directly access the \ref surface. This can be used to work with arbitrary surface data or to decrease the overhead of the image/matrix pipeline. The latter is important if the application is time critical.
+ * The \ref tangentdistance can be used to increase the invariance against arbitrary transformations.
+ */

@@ -1,0 +1,17 @@
+/** \page rotationparameters Rotation Parameters
+ *  Three different representations for rotations have been implemented in this library:
+ *
+ *  \image html rotation_parameters.png
+ *
+ *  Each implementation has advantages and disadvantages, however only the class shc::Xyz is used as parameter for functions inside the libShc.
+ *  Functions to convert between the different representations are available:
+ *
+ *  - shc::Shc::xyz2r / shc::Shc::r2xyz
+ *  - shc::Shc::xyz2axr / shc::Shc::axr2xyz
+ *  - shc::Shc::axr2r / shc::Shc::r2axr
+ *
+ *  This allows to choose an appropriate representation depending on the current use-case.
+ *  Note that shc::Xyz and shc::Axr are represented by distinct classes,
+ *  while a rotation matrix is simply a real-valued 3x3 matrix.
+ *  For debugging all three rotation parameters can be printed to the console using shc::Shc::print.
+ */
